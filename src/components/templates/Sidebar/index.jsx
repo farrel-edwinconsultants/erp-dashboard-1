@@ -48,6 +48,9 @@ const Sidebar = () => {
                     <MenuItem>
                         Gudang
                         <Link to="/gudang" />
+                    </MenuItem><MenuItem>
+                        Grade
+                        <Link to="/grade" />
                     </MenuItem>
                     <MenuItem>
                         Bagian
@@ -64,6 +67,10 @@ const Sidebar = () => {
                     <MenuItem>
                         Produk
                         <Link to="/produk" />
+                    </MenuItem>
+                    <MenuItem>
+                        Tipe Produk
+                        <Link to="/tipe" />
                     </MenuItem>
                     <MenuItem>
                         Pajak

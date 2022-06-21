@@ -1,6 +1,10 @@
 // import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import jsCookie from 'js-cookie'
+import axios from 'axios'
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import Url from '../../../Config'
 import GrupTable from '../../../components/mollecules/GrupTable'
 
 // axios.get('http://localhost:8000/groups')
@@ -8,21 +12,53 @@ import GrupTable from '../../../components/mollecules/GrupTable'
 // 	.catch(() => {})
 
 const Grup = () => {
-  return (
-    <div>
-        <div className="text-title text-start">
-            <h3 className="title fw-bold">Daftar Grup</h3>
+  const token = jsCookie.get('auth')
+    const [userAccess, setUserAccess] = useState([])
+
+    useEffect(() => {
+      axios.get(`${Url}/get_user_access_rights?ability_name=create-group`, {
+        headers: { 
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+        })
+        .then(res => {
+          setUserAccess(res.data)
+          console.log(res.data)
+        })
+    }, [])
+
+    if(userAccess) {
+      return (
+        <div className="container shadow-lg p-3 mb-5 bg-body rounded d-flex flex-column">
+          <div className="row">
+            <div className="col text-title text-start">
+                <h3 className="title fw-bold">Daftar Grup</h3>
+            </div>
+            {userAccess?.map(d => {
+              if (d.ability_name === "create-group") {
+                return (
+                  <div className="col button-add text-end me-3">
+                    <Link to="/grup/buat">
+                        <button type="button" className="btn btn-primary btn-sm">
+                          <AddOutlinedIcon/>
+                        </button>
+                    </Link>
+                </div>
+                )}
+              })}
+          </div>
+              <GrupTable />
         </div>
-        <GrupTable />
-        <div className="button-add">
-            <Link to="/grup/buat">
-                <button type="button" className="btn btn-primary">
-                        Buat
-                </button>
-            </Link>
+      )
+    } else {
+      <div>
+            <div className="text-title text-start">
+                <h3 className="title fw-bold">Daftar Grup</h3>
+            </div>
+            <GrupTable />
         </div>
-    </div>
-  )
+    }
 }
 
 export default Grup

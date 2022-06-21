@@ -1,7 +1,7 @@
 import './form.css'
 import CariFakturTable from '../../../components/mollecules/PelunasanTable/CariFakturTable'
 
-const buatPelunasan = () => {
+const BuatPelunasan = () => {
     return (
         <>
             <form className="form-input shadow-lg p-3 mb-5 bg-body rounded">
@@ -90,4 +90,4 @@ const buatPelunasan = () => {
     )
 }
 
-export default buatPelunasan
+export default BuatPelunasan

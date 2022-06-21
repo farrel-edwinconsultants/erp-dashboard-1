@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const detailBagian = () => {
+export const DetailBagian = () => {
   return (
     <>
     <form className="form-input shadow-lg p-3 mb-5 bg-body rounded">
@@ -30,4 +30,4 @@ export const detailBagian = () => {
   )
 }
 
-export default detailBagian
+export default DetailBagian

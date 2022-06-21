@@ -1,12 +1,13 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Dashboard from '../pages/Dashboard'
-import Grup from '../pages/DataMaster/Grup'
 
 import Login from '../pages/Login'
 
 import Modul from '../pages/Modul'
 import BuatModul from '../pages/Modul/buat'
+
+import Grup from '../pages/DataMaster/Grup'
 import BuatGrup from '../pages/DataMaster/Grup/buat'
 import EditGrup from '../pages/DataMaster/Grup/edit'
 import DetailGrup from '../pages/DataMaster/Grup/detail'
@@ -117,97 +118,97 @@ const RouteApp = () => {
 
                 <Route path="/grup" exact element={<Grup />} />
                 <Route path="/grup/buat" exact element={<BuatGrup />} />
-                <Route path="/grup/edit" exact element={<EditGrup />} />
+                <Route path="/grup/edit/:id" exact element={<EditGrup />} />
                 <Route path="/grup/detail" exact element={<DetailGrup />} />
 
                 <Route path="/pengguna" exact element={<Pengguna />} />
                 <Route path="/pengguna/buat" exact element={<BuatPengguna />} />
-                <Route path="/pengguna/edit" exact element={<EditPengguna />} />
+                <Route path="/pengguna/edit/:id" exact element={<EditPengguna />} />
                 <Route path="/pengguna/detail" exact element={<DetailPengguna />} />
 
                 <Route path="/departemen" exact element={<Departemen />} />
                 <Route path="/departemen/buat" exact element={<BuatDepartemen />} />
-                <Route path="/departemen/edit" exact element={<EditDepartemen />} />
+                <Route path="/departemen/edit/:id" exact element={<EditDepartemen />} />
                 <Route path="/departemen/detail" exact element={<DetailDepartemen />} />
 
                 <Route path="/posisi" exact element={<Posisi />} />
                 <Route path="/posisi/buat" exact element={<BuatPosisi />} />
-                <Route path="/posisi/edit" exact element={<EditPosisi />} />
+                <Route path="/posisi/edit/:id" exact element={<EditPosisi />} />
                 <Route path="/posisi/detail" exact element={<DetailPosisi />} />
 
                 <Route path="/karyawan" exact element={<Karyawan />} />
                 <Route path="/karyawan/buat" exact element={<BuatKaryawan />} />
-                <Route path="/karyawan/edit" exact element={<EditKaryawan />} />
+                <Route path="/karyawan/edit/:id" exact element={<EditKaryawan />} />
                 <Route path="/karyawan/detail" exact element={<DetailKaryawan />} />
 
                 <Route path="/pelanggan" exact element={<Pelanggan />} />
                 <Route path="/pelanggan/buat" exact element={<BuatPelanggan />} />
-                <Route path="/pelanggan/edit" exact element={<EditPelanggan />} />
+                <Route path="/pelanggan/edit/:id" exact element={<EditPelanggan />} />
                 <Route path="/pelanggan/detail" exact element={<DetailPelanggan />} />
                 
                 <Route path="/gudang" exact element={<Gudang />} />
                 <Route path="/gudang/buat" exact element={<BuatGudang />} />
-                <Route path="/gudang/edit" exact element={<EditGudang />} />
+                <Route path="/gudang/edit/:id" exact element={<EditGudang />} />
                 <Route path="/gudang/detail" exact element={<DetailGudang />} />
 
                 <Route path="/bagian" exact element={<Bagian />} />
                 <Route path="/bagian/buat" exact element={<BuatBagian />} />
-                <Route path="/bagian/edit" exact element={<EditBagian />} />
+                <Route path="/bagian/edit/:id" exact element={<EditBagian />} />
                 <Route path="/bagian/detail" exact element={<DetailBagian />} />
 
                 <Route path="/kategori" exact element={<Kategori />} />
                 <Route path="/kategori/buat" exact element={<BuatKategori />} />
-                <Route path="/kategori/edit" exact element={<EditKategori />} />
+                <Route path="/kategori/edit/:id" exact element={<EditKategori />} />
                 <Route path="/kategori/detail" exact element={<DetailKategori />} />
 
                 <Route path="/merek" exact element={<Merek />} />
                 <Route path="/merek/buat" exact element={<BuatMerek />} />
-                <Route path="/merek/edit" exact element={<EditMerek />} />
+                <Route path="/merek/edit/:id" exact element={<EditMerek />} />
                 <Route path="/merek/detail" exact element={<DetailMerek />} />
 
                 <Route path="/pajak" exact element={<Pajak />} />
                 <Route path="/pajak/buat" exact element={<BuatPajak />} />
-                <Route path="/pajak/edit" exact element={<EditPajak />} />
+                <Route path="/pajak/edit/:id" exact element={<EditPajak />} />
                 <Route path="/pajak/detail" exact element={<DetailPajak />} />
 
                 <Route path="/grade" exact element={<Grade />} />
                 <Route path="/grade/buat" exact element={<BuatGrade />} />
-                <Route path="/grade/edit" exact element={<EditGrade />} />
+                <Route path="/grade/edit/:id" exact element={<EditGrade />} />
                 <Route path="/grade/detail" exact element={<DetailGrade />} />
 
                 <Route path="/tipe" exact element={<TipeProduk />} />
                 <Route path="/tipe/buat" exact element={<BuatTipeProduk />} />
-                <Route path="/tipe/edit" exact element={<EditTipeProduk />} />
+                <Route path="/tipe/edit/:id" exact element={<EditTipeProduk />} />
                 <Route path="/tipe/detail" exact element={<DetailTipeProduk />} />
 
                 <Route path="/produk" exact element={<Produk />} />
                 <Route path="/produk/buat" exact element={<BuatProduk />} />
-                <Route path="/produk/edit" exact element={<EditProduk />} />
+                <Route path="/produk/edit/:id" exact element={<EditProduk />} />
                 <Route path="/produk/detail" exact element={<DetailProduk />} />
 
                 <Route path="/pesanan" exact element={<Pesanan />} />
                 <Route path="/pesanan/buat" exact element={<BuatPesanan />} />
-                <Route path="/pesanan/edit" exact element={<EditPesanan />} />
+                <Route path="/pesanan/edit/:id" exact element={<EditPesanan />} />
                 <Route path="/pesanan/detail" exact element={<DetailPesanan />} />
 
                 <Route path="/suratjalan" exact element={<SuratJalan />} />
                 <Route path="/suratjalan/buat" exact element={<BuatSuratJalan />} />
-                <Route path="/suratjalan/edit" exact element={<EditSuratJalan />} />
+                <Route path="/suratjalan/edit/:id" exact element={<EditSuratJalan />} />
                 <Route path="/suratjalan/detail" exact element={<DetailSuratJalan />} />
 
                 <Route path="/faktur" exact element={<Faktur />} />
                 <Route path="/faktur/buat" exact element={<BuatFaktur />} />
-                <Route path="/faktur/edit" exact element={<EditFaktur />} />
+                <Route path="/faktur/edit/:id" exact element={<EditFaktur />} />
                 <Route path="/faktur/detail" exact element={<DetailFaktur />} />
 
                 <Route path="/pelunasan" exact element={<Pelunasan />} />
                 <Route path="/pelunasan/buat" exact element={<BuatPelunasan />} />
-                <Route path="/pelunasan/edit" exact element={<EditPelunasan />} />
+                <Route path="/pelunasan/edit/:id" exact element={<EditPelunasan />} />
                 <Route path="/pelunasan/detail" exact element={<DetailPelunasan />} />
 
                 <Route path="/tally" exact element={<Tally />} />
                 <Route path="/tally/buat" exact element={<BuatTally />} />
-                <Route path="/tally/edit" exact element={<EditTally />} />
+                <Route path="/tally/edit/:id" exact element={<EditTally />} />
                 <Route path="/tally/detail" exact element={<DetailTally />} />
             </Routes>
         </>
