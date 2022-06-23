@@ -35,7 +35,7 @@ const Grade = () => {
           if (d.ability_name === "create-grade") {
             return (
               <div className="col button-add text-end me-3">
-                <Link to="/grade/buat">
+                  <Link to="/grade/buat">
                   <button type="button" className="btn btn-primary btn-sm">
                     <AddOutlinedIcon/>
                   </button>

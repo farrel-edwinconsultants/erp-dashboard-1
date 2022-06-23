@@ -62,23 +62,37 @@ const BuatProduk = () => {
         })
         .then(function (res) {
             //handle success
-            console.log(res)
+            Swal.fire(
+                'Berhasil Ditambahkan',
+                `${getProduct} Masuk dalam list`,
+                'success'
+            )
             navigate('/produk')
         })
         .catch(err => {
             if (err.response) {
                 console.log("err.response ", err.response);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.request) {
                 console.log("err.request ", err.request);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.message) {
                 // do something other than the other two
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               }
         })
-        Swal.fire(
-            'Berhasil Ditambahkan',
-            `${name} Masuk dalam list`,
-            'success'
-          )
     }
 
     useEffect(() => {

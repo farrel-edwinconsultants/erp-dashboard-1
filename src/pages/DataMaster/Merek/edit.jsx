@@ -47,13 +47,23 @@ const EditMerek = () => {
         .catch(err => {
             if (err.response) {
                 console.log("err.response ", err.response);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.request) {
                 console.log("err.request ", err.request);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.message) {
                 // do something other than the other two
                 Swal.fire(
-                    'Belum Berhasil Ditambahkan',
-                    `Coba Isi Dengan Teliti!`,
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
                     'error'
                 )
               }

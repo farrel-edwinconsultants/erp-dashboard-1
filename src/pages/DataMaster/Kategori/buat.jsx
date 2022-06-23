@@ -36,22 +36,37 @@ const BuatKategori = () => {
         })
         .then(function (response) {
             //handle success
+            Swal.fire(
+                'Berhasil Ditambahkan',
+                `${getCategory} Masuk dalam list`,
+                'success'
+              )
             navigate('/kategori')
         })
         .catch(err => {
             if (err.response) {
                 console.log("err.response ", err.response);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.request) {
                 console.log("err.request ", err.request);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.message) {
                 // do something other than the other two
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               }
         })
-        Swal.fire(
-            'Berhasil Ditambahkan',
-            `${id} Masuk dalam list`,
-            'success'
-          )
     }
 
     useEffect(() => {

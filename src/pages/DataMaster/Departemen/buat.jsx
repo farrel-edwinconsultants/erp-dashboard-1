@@ -32,15 +32,40 @@ const BuatDepartemen = () => {
             'Authorization': `Bearer ${token}`
           }
         })
-        .then(function (response) {
+        .then(function (res) {
             //handle success
+            console.log(res)
+            Swal.fire(
+                'Berhasil Ditambahkan',
+                `${getDepartment} Masuk dalam list`,
+                'success'
+            )
             navigate('/departemen')
         })
-        Swal.fire(
-            'Berhasil Ditambahkan',
-            `${id} Masuk dalam list`,
-            'success'
-          )
+        .catch(err => {
+            if (err.response) {
+                console.log("err.response ", err.response);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
+              } else if (err.request) {
+                console.log("err.request ", err.request);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
+              } else if (err.message) {
+                // do something other than the other two
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
+              }
+        })
     }
 
     useEffect(() => {

@@ -90,9 +90,9 @@ const PenggunaTable = () => {
                                     <TableCell>
                                         <ul className="list-unstyled">
                                             {d.group_users.map(data => {
-                                                    return(
-                                                        <li>{data.group_id}</li>
-                                                    )
+                                                return(
+                                                    <li>{data.group_id}</li>
+                                                )
                                             })}
                                         </ul>
                                     </TableCell>

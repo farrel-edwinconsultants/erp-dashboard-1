@@ -63,7 +63,7 @@ const EditKaryawan = () => {
             console.log(res)
             Swal.fire(
                 'Berhasil Ditambahkan',
-                `${name} Masuk dalam list`,
+                `${id} Masuk dalam list`,
                 'success'
               )
             navigate('/karyawan')
@@ -71,18 +71,27 @@ const EditKaryawan = () => {
         .catch(err => {
             if (err.response) {
                 console.log("err.response ", err.response);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.request) {
                 console.log("err.request ", err.request);
+                Swal.fire(
+                    'Gagal Ditambahkan',
+                    'Mohon Cek Dahulu..',
+                    'error'
+                )
               } else if (err.message) {
                 // do something other than the other two
-              }
-              Swal.fire(
-                'Belum Berhasil Ditambahkan',
-                `Coba Isi Dengan Teliti!`,
-                'error'
+                Swal.fire(
+                  'Gagal Ditambahkan',
+                  'Mohon Cek Dahulu..',
+                  'error'
               )
+              }
         })
-        
     }
 
     useEffect(() => {
